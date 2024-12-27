@@ -266,7 +266,6 @@
 ;; Validates if a given principal address is valid.
 (define-read-only (is-valid-principal (address principal))
     (and 
-        (is-ok (principal-destruct? address))
         (not (is-eq address CONTRACT-DEPLOYER))
         (not (is-eq address (as-contract tx-sender)))
     )
